@@ -136,7 +136,7 @@ else:
                     if lookupField[2]:
                         longDesc = lookupField[2]
                         # Remove escape characters like double quotes, newlines, or encoding issues
-                        if "<" or ">" in longDesc:
+                        if "<" in longDesc or ">" in longDesc:
                             print("Special character > or < found in field: " + fieldName)
                             print("Script will not run as expected. Please remove all hyperlinks or > < characters from your long description and rerun the script.")
                         longDesc = longDesc.replace('"', '\\\"').replace("\n", " ").replace("\t", " ").replace(u'\xa0', u' ').replace(">=", " greater than or equal to ").replace("<=", " less than or equal to ").replace(">", " greater than ").replace("<", " less than ")
